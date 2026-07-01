@@ -1,0 +1,13 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+
+<title>You must be logged in to access this page.</title></head>
+
+<BODY TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#0000CC" VLINK="#0000CC" ALINK="#0000CC">
+
+<CENTER><IMG SRC="../images/sm_logo.png" ALT="ktown213.com Logo"><BR>
+<SMALL>SquirrelMail version 1.2.11<BR>
+  By the SquirrelMail Development Team<BR></SMALL>
+<table cellspacing=1 cellpadding=0 bgcolor="#800000" width="70%"><tr><td><TABLE WIDTH="100%" BORDER="0" BGCOLOR="#FFFFFF" ALIGN=CENTER><TR><TD BGCOLOR="#DCDCDC" ALIGN="center"><FONT COLOR="#CC0000"><B>ERROR</B></FONT></TD></TR><TR><TD ALIGN="center">You must be logged in to access this page.</TD></TR><TR><TD BGCOLOR="#DCDCDC" ALIGN="center"><FONT COLOR="#CC0000"><B><a href="/squirrelmail/src/login.php?SQMSESSID=63f6ccc83b80117402a1c15bd1bec755" target="_top">Go to the login page</a></B></FONT></TD></TR></TABLE></td></tr></table></center></body></html>

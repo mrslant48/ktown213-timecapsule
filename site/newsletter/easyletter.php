@@ -1,0 +1,10 @@
+<body bgcolor="FFCC33"><font face="Verdana" size="1">
+
+	<form method="POST" style="font-family: Verdana; font-size: 8pt; background-color:#FFCC33">
+	<p>Ktown213 Newsletter:&nbsp; 
+    <input type="text" name="email" class="inputsmall" value="Email" size="20" style="font-family: Verdana; font-size: 8pt" /><input type="radio" name="action" value="sign" checked="checked" />subscribe 
+	<input type="radio" name="action" value="delete" />unsubscribe&nbsp;
+	<input type="submit" value=" Send! " class="button" style="font-family: Verdana; font-size: 8pt" />
+    </p>
+	</form>
+	<!-- Easyletter Newsletterscript by Chris Heilmann, get yours @ http://www.onlinetools.org/easyletter/ --></body>
