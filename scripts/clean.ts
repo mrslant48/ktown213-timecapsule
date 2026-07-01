@@ -5,7 +5,7 @@
 import { readdir } from "node:fs/promises";
 import { join, extname } from "node:path";
 
-const SITE_DIR = join(import.meta.dir, "..", "site");
+const SITE_DIR = join(import.meta.dir, "..", "docs");
 
 // Matches http://ktown213.com/, http://www.ktown213.com/, https:// variants,
 // with or without :80, case-insensitively.

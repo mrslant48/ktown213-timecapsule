@@ -4,7 +4,7 @@
 import { readdir } from "node:fs/promises";
 import { join, extname } from "node:path";
 
-const SITE_DIR = join(import.meta.dir, "..", "site");
+const SITE_DIR = join(import.meta.dir, "..", "docs");
 const FORUM_BASE = "https://web.archive.org/web/20040612065731/http://www.ktown213.com/forums/";
 
 // Matches href="/forums", href="/forums/", href="/forums/anything", href="../forums/anything"

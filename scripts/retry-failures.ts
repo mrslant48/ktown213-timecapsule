@@ -5,7 +5,7 @@ import { dirname, join } from "node:path";
 
 const MANIFEST = join(import.meta.dir, "manifest.tsv");
 const FAILURES = join(import.meta.dir, "failures.txt");
-const OUT_DIR = join(import.meta.dir, "..", "site");
+const OUT_DIR = join(import.meta.dir, "..", "docs");
 
 function localPathFor(url: string): string {
   const u = url.replace(/^https?:\/\/[^\/]+/, "");

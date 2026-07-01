@@ -5,7 +5,7 @@ import { mkdir } from "node:fs/promises";
 import { dirname, join } from "node:path";
 
 const MANIFEST = process.argv[2] ?? join(import.meta.dir, "manifest.tsv");
-const OUT_DIR = join(import.meta.dir, "..", "site");
+const OUT_DIR = join(import.meta.dir, "..", "docs");
 const CONCURRENCY = 6;
 const MAX_RETRIES = 4;
 

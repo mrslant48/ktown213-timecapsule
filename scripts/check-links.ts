@@ -5,7 +5,7 @@ import { readdir } from "node:fs/promises";
 import { join, extname, dirname, normalize } from "node:path";
 import { existsSync } from "node:fs";
 
-const SITE_DIR = join(import.meta.dir, "..", "site");
+const SITE_DIR = join(import.meta.dir, "..", "docs");
 const ATTR_RE = /(?:href|src|background|codebase)\s*=\s*"([^"]*)"/gi;
 
 async function* walk(dir: string): AsyncGenerator<string> {
