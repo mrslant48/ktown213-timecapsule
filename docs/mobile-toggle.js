@@ -1,10 +1,18 @@
-// Classic vs Compact view toggle. "Classic" (default) is untouched - no
-// viewport meta tag is added, so browsers fall back to their standard
-// desktop-site zoom-to-fit behavior, same as this time capsule has always
-// rendered. "Compact" adds a viewport meta tag matched to the page's own
-// actual rendered width, so mobile browsers zoom in to fill the screen
-// instead of showing a wide, tiny-text page. Preference is remembered
-// site-wide via localStorage.
+// Classic vs Compact view toggle.
+//
+// The old version only set a <meta name="viewport"> tag, which desktop
+// browsers completely ignore (viewport meta is a mobile-browser-only
+// convention) - so the toggle looked like it did nothing when tested on a
+// desktop. This version applies a CSS zoom directly, which is visible
+// and testable on any device/window size, and genuinely helps on a real
+// phone too: it scales the fixed-width page down (or up to fill, capped
+// at 100%) to match the current window width.
+//
+// "Classic" (default) is the page exactly as it has always rendered -
+// zoom is left alone. "Compact" computes zoom = windowWidth / naturalPage
+// Width (never above 1, so wide desktop windows are untouched - there's
+// nothing to compact when the page already fits). Preference is
+// remembered site-wide via localStorage and reapplied on resize.
 (function () {
   var KEY = "ktownViewMode"; // "compact" | "classic"
 
@@ -22,21 +30,23 @@
     } catch (e) {}
   }
 
+  function naturalWidth() {
+    var html = document.documentElement;
+    var prevZoom = html.style.zoom;
+    html.style.zoom = "1"; // reset before measuring, or we'd measure a stale scaled size
+    var w = html.scrollWidth || document.body.scrollWidth || 855;
+    html.style.zoom = prevZoom;
+    return w;
+  }
+
   function applyMode(mode) {
-    var meta = document.querySelector('meta[name="viewport"]');
+    var html = document.documentElement;
     if (mode === "compact") {
-      var w = Math.max(
-        320,
-        document.documentElement.scrollWidth || document.body.scrollWidth || 855
-      );
-      if (!meta) {
-        meta = document.createElement("meta");
-        meta.setAttribute("name", "viewport");
-        document.head.appendChild(meta);
-      }
-      meta.setAttribute("content", "width=" + w);
-    } else if (meta) {
-      meta.parentNode.removeChild(meta);
+      var w = naturalWidth();
+      var scale = Math.min(1, (window.innerWidth - 4) / w);
+      html.style.zoom = scale;
+    } else {
+      html.style.zoom = "";
     }
   }
 
@@ -65,6 +75,9 @@
   function init() {
     applyMode(getMode()); // no-op if "classic" (the default) - page is untouched
     makeButton();
+    window.addEventListener("resize", function () {
+      if (getMode() === "compact") applyMode("compact");
+    });
   }
 
   if (document.readyState === "complete") {
