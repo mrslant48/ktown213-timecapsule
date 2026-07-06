@@ -14,8 +14,8 @@
     bar.innerHTML =
       '\u{1F570}\u{FE0F} <strong>Time Capsule:</strong> this is Ktown213.com as it appeared circa 2003–2005, ' +
       'rebuilt from Wayback Machine archives. It is not a live or current site. ' +
-      '<a href="https://github.com/mrslant48/ktown213-timecapsule" target="_blank" rel="noopener" ' +
-      'style="color:#ffcc33;text-decoration:underline">Learn more →</a>';
+      '<a href="https://instagram.com/ktown213com" target="_blank" rel="noopener" ' +
+      'style="color:#ffcc33;text-decoration:underline">Follow us on IG →</a>';
     document.body.insertBefore(bar, document.body.firstChild);
   }
 
